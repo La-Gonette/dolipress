@@ -1,0 +1,11 @@
+SQL
+
+In /var/www/dolibarr/htdocs/core/modules/modSociete.class.php
+In function __construct
+Add the following:
+$this->module_parts = array( 'hooks' => array( 'thirdpartydao' ) );
+
+Cron job:
+
+sudo crontab -e -u root
+*/5 * * * * /usr/bin/php5 /var/www/dolibarr/scripts/partnerrefresh/triggerpartnerrefresh.php
