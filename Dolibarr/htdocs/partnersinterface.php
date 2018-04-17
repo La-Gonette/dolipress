@@ -79,36 +79,7 @@ else {
         if ($result = $db->query($categoriesSelectionQuery)) {
             while ($row = $result->fetch_assoc()) {
                 if ($format === "app_categories") {
-                    /*$parentCategory = -1;
-                    $separator = strrpos( $row['partnerCategoryLabel'], ">" );
-                    if( FALSE !== $separator ) {
-                    $mainCategory = trim( substr( $row['partnerCategoryLabel'], 0, $separator ) );
-                    $row['partnerCategoryLabel'] = trim( substr( $row['partnerCategoryLabel'], $separator + 1 ) );
-                    for( $i = 0; $parentCategory === -1 && $i < count( $response['categories'] ); ++$i ) {
-                    if( $response['categories'][$i]['label'] === $mainCategory ) {
-                    $parentCategory = $response['categories'][$i]['id'];
-                    }
-                    }
-
-                    if( $parentCategory === -1 ) {
-                    $parentCategory = intval( $row['partnerCategoryID'], 10 );
                     $category = array();
-                    $category['parentCategoryType'] = -1;
-                    $category['categoryType'] = 1;
-                    $category['parentId'] = -1;
-                    $category['id'] = $parentCategory;
-                    $category['label'] = $mainCategory;
-                    $category['displayOrder'] = $row['displayOrder'];
-                    $category['icon'] = "";
-                    array_push( $response['categories'], $category );
-                    }
-                    }*/
-                    $category = array();
-
-                    // $category['parentCategoryType'] = $parentCategory === -1 ? -1 : 1;
-                    //        $category['categoryType'] = 0;
-                    //        $category['parentId'] = $parentCategory;
-
                     $category['id'] = intval($row['partnerCategoryID'], 10);
                     $category['label'] = $row['partnerCategoryLabel'];
                     $category['displayOrder'] = $row['displayOrder'];
