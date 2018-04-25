@@ -170,7 +170,7 @@ else {
                             $partner['description'] = $row['description'];
                             $partner['shortDescription'] = $row['shortDescription'];
                             $partner['mainCategory'] = $isGonetteHeadquarter ? "-1" : $row['mainCategory'];
-                            $partner['sideCategories'] = $isGonetteHeadquarter ? "" : explode(",", $row['sideCategories']);
+                            $partner['sideCategories'] = $isGonetteHeadquarter ? [] : explode(",", $row['sideCategories']);
                             $partner['isGonetteHeadquarter'] = $isGonetteHeadquarter ? "1" : "0";
                             $partner['locations'] = array();
 
