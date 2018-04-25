@@ -123,6 +123,7 @@ else {
                 $partnersSelectionQuery.= $ccode;
                 $partnersSelectionQuery.= " ORDER BY societe.nom";
                 if ($result = $db->query($partnersSelectionQuery)) {
+                    $locationId = 1;
                     while ($row = $result->fetch_assoc()) {
                         $isGonetteHeadquarter = ($row['clientCode'] === "P0000");
 
@@ -175,8 +176,6 @@ else {
                             $partner['locations'] = array();
 
                             // TODO: handle multiple adresses
-
-                            $locationId = 0;
 
                             if ($partner['clientCode'] === "P0130") {
                                 $location = array(); $location['id'] = $locationId++;  $location['openingHours'] = "Mercredi de 17h30 à 19h15"; $location['isExchangeOffice'] = null; $location['address'] = "9 bis Avenue du Général Leclerc"; $location['city'] = "Rilleux-la-Pape"; $location['zipCode'] = "69140"; $location['latitude'] = "4.900127649307251"; $location['longitude'] = "45.81412959759548";  $location['displayLocation'] = "1"; array_push($partner['locations'], $location);
