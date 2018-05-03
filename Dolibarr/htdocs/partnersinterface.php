@@ -6,7 +6,7 @@ require_once (dirname(__FILE__) . "/master.inc.php");
  error_reporting( E_ALL );
  /*
  */
-$conf = "";
+$conf = "PROD";
 $allowedDomains = array(
     'TEST' => "",
     'PROD' => ""
